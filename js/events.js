@@ -5,11 +5,11 @@ window.onload = () => {
     let className = view.view_classes[LOCAL_STORAGE.getItem("view")];
     view.main.classList.add(className);
     document.querySelector("section." + className).classList.toggle("active-view");
-    let height = (parseInt(window.outerHeight / 500)+1)*4 ;
+    let height = (parseInt(window.outerHeight / 500)+1)*12 ;
     unplash.displayPhotos(height);
 };
 window.onscroll=(e)=>{
 	const {scrollTop,scrollHeight,clientHeight}=document.documentElement;
-    if (scrollTop + clientHeight >= scrollHeight - 20)
-        setTimeout(unplash.displayPhotos(8),1000);
+    if (scrollTop + clientHeight >= scrollHeight - 150)
+        unplash.displayPhotos(12);
 };

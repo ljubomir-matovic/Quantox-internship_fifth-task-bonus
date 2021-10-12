@@ -4,6 +4,9 @@ var view = {};
         this.localStorage = window.localStorage;
         this.view_classes = ["grid", "list"];
         this.main = document.querySelector("main");
+        /**Change view. List or grid view
+         * @param {*} e Event
+         */
         this.changeView = (e) => {
             let className = e.target.className || e.target.parentElement.className;
            // console.log(className);
