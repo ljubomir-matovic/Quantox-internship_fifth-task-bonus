@@ -1,7 +1,7 @@
 var unplash = {};
 (
     function () {
-        this.LINK = "https://api.unsplash.com/photos/random?client_id=HqmqSgG3ozhQbA2EXcpnaax2l_5ZoFZnwSjuArKEf_0&count";
+        this.LINK = "https://api.unsplash.com/photos/random?client_id=HqmqSgG3ozhQbA2EXcpnaax2l_5ZoFZnwSjuArKEf_0&count=";
         this.IMG_CONTAINER = document.querySelector("main");
         /**Return array of photos from unplash.com
          * @param {*} count 
@@ -26,7 +26,8 @@ var unplash = {};
             a.href = photo.links.html;
             let img = document.createElement("IMG");
             classes.forEach(c => { img.classList.add(c);})
-            a.src = photo.urls.regular;
+            img.src = photo.urls.regular;
+            img.alt = photo.alt_description;
             a.append(img);
             return a;
         };

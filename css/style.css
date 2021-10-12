@@ -25,12 +25,26 @@ header > section {
     justify-content: center;
     gap: 5px;
 }
+.list,
+.grid {
+    cursor: pointer;
+}
+.active-view {
+    filter: invert(59%) sepia(56%) saturate(5205%) hue-rotate(160deg)
+        brightness(93%) contrast(105%);
+}
 main {
     display: grid;
     gap: 20px;
 }
+main img {
+    object-fit: contain;
+    max-height: 500px;
+    width: 100%;
+}
 main.list {
     grid-template-columns: 1fr;
+    justify-items: start;
 }
 footer {
     display: flex;
@@ -41,10 +55,6 @@ footer {
 @media screen and (min-width: 1000px) {
     main.grid {
         grid-template-columns: repeat(4, 1fr);
-    }
-    main > * {
-        min-height: 250px;
-        max-height: 500px;
     }
     header img {
         width: 40px;
