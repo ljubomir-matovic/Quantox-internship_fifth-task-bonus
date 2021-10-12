@@ -7,7 +7,7 @@ var unplash = {};
          * @param {*} count 
          * @returns photosArray
          */
-        this.getPhotos = (count = 1) => {
+        this.getPhotos = async function(count = 1){
             let response = await fetch(this.LINK + `${count}`);
             if (!response.ok) {
                 console.log("err");
@@ -21,7 +21,7 @@ var unplash = {};
          * @param classes
          * @returns DOM Element 
          */
-        this.createUnplashPhoto = (photo,...classes) => {
+        this.createUnplashPhoto = (photo,...classes)=>{
             let a = document.createElement("A");
             a.href = photo.links.html;
             let img = document.createElement("IMG");
@@ -33,7 +33,7 @@ var unplash = {};
         /**Display photos from unplash.com
          * @param {*} count 
          */
-        this.displayPhotos = (count=1) => {
+        this.displayPhotos = async function(count=1){
             let photosArray = await this.getPhotos(count);
             photosArray.forEach(photo => {
                 let section = document.createElement("SECTION");
@@ -42,4 +42,4 @@ var unplash = {};
             });
         };
     }
-).append(unplash);
+).apply(unplash);
