@@ -49,6 +49,7 @@ header > section {
 main {
     display: grid;
     gap: 20px;
+    width: 100%;
 }
 .img-container {
     display: flex;
@@ -66,7 +67,7 @@ main {
 main img {
     object-fit: contain;
     max-height: 300px;
-    width: 100%;
+    max-width: 100%;
 }
 .img-a {
     height: 300px;
@@ -110,7 +111,7 @@ footer {
 /*Desktop*/
 @media screen and (min-width: 1000px) {
     main.grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, calc(33% - 10px));
     }
     header img {
         width: 40px;
@@ -124,7 +125,7 @@ footer {
 /*Tablet*/
 @media screen and (min-width: 600px) and (max-width: 999px) {
     main.grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, calc(50% - 10px));
     }
     header img {
         width: 20px;
@@ -132,19 +133,27 @@ footer {
     }
     h1 {
         font-size: 30px;
+    }
+    main img {
+        min-height: 1px;
     }
 }
 
 /*Mobile*/
 @media screen and (max-width: 599px) {
-    main.grid {
-        grid-template-columns: repeat(2, 1fr);
+    main {
+        grid-template-columns: 1fr;
     }
-    header img {
-        width: 20px;
-        height: 20px;
+    main > .img-container {
+        flex-direction: column;
+    }
+    header {
+        display: none;
     }
     h1 {
         font-size: 30px;
+    }
+    main img {
+        min-height: 1px;
     }
 }
