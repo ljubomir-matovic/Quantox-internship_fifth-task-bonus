@@ -64,7 +64,7 @@ var unplash = {};
                                 <p>${photo.views} views</p>
                                 </section>
                                 <section class="row">
-                                <a href="${photo.user.portfolio_url}">Portfolio</a>
+                                <a href="${photo.user.portfolio_url || ""}">Portfolio</a>
                                 <a href="${photo.user.social.instagram_username}">Instagram</a>
                                 <a href="https://twitter.com/${photo.user.social.twitter_username || ""}">Twitter</a>
                                 </section>
