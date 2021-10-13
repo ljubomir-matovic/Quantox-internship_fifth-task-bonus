@@ -1,8 +1,8 @@
 window.onload = () => {
-    const LOCAL_STORAGE = view.localStorage;
-    if (LOCAL_STORAGE.getItem("view") === null)
-        LOCAL_STORAGE.setItem("view", 0);
-    let className = view.view_classes[LOCAL_STORAGE.getItem("view")];
+    const localStorage = view.localStorage;
+    if (localStorage.getItem("view") === null)
+        localStorage.setItem("view", 0);
+    let className = view.view_classes[localStorage.getItem("view")];
     view.main.classList.add(className);
     document.querySelector("section." + className).classList.toggle("active-view");
     let height = (parseInt(window.outerHeight / 500)+1)*12 ;

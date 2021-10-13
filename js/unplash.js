@@ -1,20 +1,20 @@
 var unplash = {};
 (
     function () {
-        this.LINK = "https://api.unsplash.com/photos/random?client_id=HqmqSgG3ozhQbA2EXcpnaax2l_5ZoFZnwSjuArKEf_0&fit=clip&w=100&h=100&count=";
-        this.IMG_CONTAINER = document.querySelector("main");
+        this.link = "https://api.unsplash.com/photos/random?client_id=HqmqSgG3ozhQbA2EXcpnaax2l_5ZoFZnwSjuArKEf_0&fit=clip&w=100&h=100&count=";
+        this.imgContainer = document.querySelector("main");
         /**Return array of photos from unplash.com
          * @param {*} count 
          * @returns photosArray
          */
         this.getPhotos = async function(count = 1){
-            let response = await fetch(this.LINK + `${count}`);
+            let response = await fetch(this.link + `${count}`);
             if (!response.ok) {
                 let error = `<section class="error">
                                 <h1>Rate Limit Exceed</h1>
                                 <h1>Try again later</h1>
                             </section>`;
-                this.IMG_CONTAINER.innerHTML = error;
+                this.imgContainer.innerHTML = error;
                 document.body.style.overflow = "hidden";
                 throw new Error("err");
             }
@@ -71,7 +71,7 @@ var unplash = {};
                             </section>`;
                     section.append(this.createUnplashPhoto(photo));
                     section.innerHTML += other;
-                    this.IMG_CONTAINER.append(section);
+                    this.imgContainer.append(section);
                 });
             }
             catch (err) {
