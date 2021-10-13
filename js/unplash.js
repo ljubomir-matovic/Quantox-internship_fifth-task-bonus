@@ -60,7 +60,7 @@ var unplash = {};
                                 <p>${photo.user.bio || ""}</p>
                                 <section class="row">
                                 <p>${photo.likes} likes</p>
-                                <p>${photo.downloads} downaloads</p>
+                                <p>${photo.downloads} downloads</p>
                                 <p>${photo.views} views</p>
                                 </section>
                                 <section class="row">
